@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <title>Hyprova Health</title>
+    <meta name="description" content="AI-powered health and wellness tracker by Hyprova Research" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#6366F1', // Indigo 500
+                light: '#818CF8',   
+                dark: '#312E81',    
+                soft: '#E0E7FF',    
+              },
+              hrb: {
+                navy: '#0B2447',    // Brand Dark Blue
+                gold: '#F59E0B',    // Brand Gold
+                goldLight: '#FCD34D', 
+                blue: '#19376D',    
+              },
+              accent: {
+                DEFAULT: '#F59E0B', 
+                glow: '#FDE68A',    
+                dark: '#B45309',    
+                soft: '#FFFBEB',    
+              },
+              hyprova: {
+                50: '#F8FAFC',
+                100: '#F1F5F9',
+                500: '#64748B', 
+                900: '#0F172A', 
+              },
+              success: '#10B981', 
+              warning: '#F59E0B', 
+              error: '#EF4444',   
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              'slide-down': 'slideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              'blob': 'blob 20s infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              slideDown: {
+                '0%': { transform: 'translateY(-20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              blob: {
+                '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                '100%': { transform: 'translate(0px, 0px) scale(1)' },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior-y: none;
+        background-color: #F8FAFC;
+      }
+      .hide-scrollbar::-webkit-scrollbar { display: none; }
+      .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      
+      /* Noise Texture */
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.04'/%3E%3C/svg%3E");
+      }
+
+      /* Premium Glass */
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.8);
+        box-shadow: 
+          0 4px 30px rgba(0, 0, 0, 0.03),
+          inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+      }
+      
+      .glass-dark {
+        background: rgba(11, 36, 71, 0.85); /* Brand Navy Base */
+        backdrop-filter: blur(24px) saturate(180%);
+        -webkit-backdrop-filter: blur(24px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 
+          0 20px 40px rgba(0, 0, 0, 0.4),
+          inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+      }
+
+      /* Custom Range Sliders - Thick & Tactile */
+      input[type=range] {
+        -webkit-appearance: none;
+        width: 100%;
+        background: transparent;
+      }
+      
+      input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.1);
+        margin-top: -10px;
+        cursor: pointer;
+        transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+      }
+
+      input[type=range]:active::-webkit-slider-thumb {
+        transform: scale(1.2);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      }
+
+      input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: rgba(0,0,0,0.05);
+        border-radius: 999px;
+      }
+      
+      /* Firefox */
+      input[type=range]::-moz-range-thumb {
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+        background: #ffffff;
+        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+      
+      input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8px;
+        cursor: pointer;
+        background: rgba(0,0,0,0.05);
+        border-radius: 999px;
+      }
+
+      /* Markdown Content Styles */
+      strong { font-weight: 700; }
+      .prose-sm p { margin-bottom: 0.75em; }
+      .prose-sm ul { list-style-type: disc; padding-left: 1.25em; margin-bottom: 0.75em; }
+      .prose-sm ol { list-style-type: decimal; padding-left: 1.25em; margin-bottom: 0.75em; }
+      .prose-sm strong { font-weight: 700; color: inherit; }
+      .prose-sm h1, .prose-sm h2, .prose-sm h3 { font-weight: 800; margin-top: 1em; margin-bottom: 0.5em; }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "recharts": "https://aistudiocdn.com/recharts@^3.4.1",
+    "react-webcam": "https://aistudiocdn.com/react-webcam@^7.2.0",
+    "react-markdown": "https://esm.sh/react-markdown@9.0.1?bundle",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "jspdf-autotable": "https://esm.sh/jspdf-autotable@3.8.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="antialiased text-slate-800 selection:bg-hrb-gold selection:text-hrb-navy bg-slate-50">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

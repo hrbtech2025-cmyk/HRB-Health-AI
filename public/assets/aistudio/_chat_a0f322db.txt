@@ -1,0 +1,38 @@
+
+‎[23/10/2026, 13:11:23] Abyann Manikandan: The gemini API key isn't part of the actual onboarding, therefore the App tour triggers immediately. ‎<attached: 00000293-PHOTO-2026-10-23-13-11-23.jpg>
+‎[23/10/2026, 13:13:06] Abyann Manikandan: this has to be presented better, along the lines of "hey sorry to keep this app free we really need to do this, please follow the steps below" but like a bit more professionally yk ‎<attached: 00000294-PHOTO-2026-10-23-13-13-06.jpg>
+‎[23/10/2026, 13:14:27] Abyann Manikandan: streamline this part of the mood logging ‎<attached: 00000295-PHOTO-2026-10-23-13-14-27.jpg>
+[23/10/2026, 13:15:37] Siddhant Kapoor: is this it
+[23/10/2026, 13:15:56] Siddhant Kapoor: ill update teh code base based on this befroe we continue
+‎[23/10/2026, 13:16:10] Abyann Manikandan: when the app is first opened after the AppTour, the user should be prompted to immediately do the first log, make the + button automatically open after AppTour is skipped or completed, with a message to ask them to input how they're feeling ‎<attached: 00000298-PHOTO-2026-10-23-13-16-10.jpg>
+[23/10/2026, 13:16:19] Abyann Manikandan: nah mores coming
+‎[23/10/2026, 13:17:18] Abyann Manikandan: The size of the textbox place where you type is huge when you first open it, when u click it, it corrects itself, but it should never look like this in the first place ‎<attached: 00000300-PHOTO-2026-10-23-13-17-18.jpg>
+‎[23/10/2026, 13:17:49] Abyann Manikandan: The spacing between texts can be improved, it looks unnatural and too spaced apart ‎<attached: 00000301-PHOTO-2026-10-23-13-17-49.jpg>
+‎[23/10/2026, 13:19:37] Abyann Manikandan: When designing a workout is clicked, the user should see like a please wait while we make your workout loading screen they should not be able to move around and accidentally close the element while it is generating. ‎<attached: 00000302-PHOTO-2026-10-23-13-19-37.jpg>
+‎[23/10/2026, 13:21:45] Abyann Manikandan: ‎<attached: 00000303-PHOTO-2026-10-23-13-21-45.jpg>
+[23/10/2026, 13:21:45] Abyann Manikandan: ‎This message was deleted.
+‎[23/10/2026, 13:21:46] Abyann Manikandan: ‎<attached: 00000305-PHOTO-2026-10-23-13-21-46.jpg>
+[23/10/2026, 13:22:17] Abyann Manikandan: right now there's a load of yap at the top when generating a workout and the text isn't formatted properly in a way the user will actually read it, make it more streamlined and each element readable in a professionally formatted way.
+‎[23/10/2026, 13:25:05] Abyann Manikandan: The form analysis is no longer functional. It worked well before, but now I doubt the video analysis is even running. And if it is the insights can't properly be seen. ‎<attached: 00000307-PHOTO-2026-10-23-13-25-05.jpg>
+‎[23/10/2026, 13:27:31] Abyann Manikandan: physique scanner is good but make sure there is an option to delay the photo to get into position etc. ‎<attached: 00000308-PHOTO-2026-10-23-13-27-31.jpg>
+‎[23/10/2026, 13:27:31] Abyann Manikandan: physique scanner is good but make sure there is an option to delay the photo to get into position etc. ‎<attached: 00000309-PHOTO-2026-10-23-13-27-31.jpg>
+‎[23/10/2026, 13:27:55] Abyann Manikandan: Basic UI alignment issue in settings ‎<attached: 00000310-PHOTO-2026-10-23-13-27-55.jpg>
+‎[23/10/2026, 13:34:51] Abyann Manikandan: Terms and conditions have to be made, Help Center and Privacy policy is already created, will share link, they have to be connected rn it's outdated. ‎<attached: 00000311-PHOTO-2026-10-23-13-34-51.jpg>
+‎[23/10/2026, 13:36:26] Abyann Manikandan: can't scroll in the bio-experiment feature, this is a key functionality flaw must be fixed, I can't check if the rest of the feature works bc of this ‎<attached: 00000312-PHOTO-2026-10-23-13-36-26.jpg>
+‎[23/10/2026, 13:37:55] Abyann Manikandan: In the AI nutrition lens in the manual, there is a button overlap this must be fixed. ‎<attached: 00000313-PHOTO-2026-10-23-13-37-55.jpg>
+‎[23/10/2026, 13:40:31] Abyann Manikandan: The light mode doesn't look too good, this might be a personal preference however make sure when the app first opens the dark mode is automatically toggled. ‎<attached: 00000314-PHOTO-2026-10-23-13-40-31.jpg>
+‎[23/10/2026, 13:41:58] Abyann Manikandan: Remove privacy mode it's useless ‎<attached: 00000315-PHOTO-2026-10-23-13-41-58.jpg>
+[23/10/2026, 13:42:27] Abyann Manikandan: Also create notification logic for certain things like reminders, or check-ins, etc.
+[23/10/2026, 13:43:00] Abyann Manikandan: Because there is a notfication toggle but the logic behind the feature is probably non-existent currently
+[23/10/2026, 13:43:34] Abyann Manikandan: And yea that's it chapoor
+[23/10/2026, 13:43:43] Abyann Manikandan: whole lotta bugs and shit to fix
+[23/10/2026, 13:44:17] Siddhant Kapoor: I dont gotta fix jack, im exporting this chat for today, uploadingto google ai studio and telling it to fix all these
+[23/10/2026, 13:44:49] Abyann Manikandan: you're not actually gonna code anything?
+[23/10/2026, 13:44:59] Siddhant Kapoor: i dont know the language
+[23/10/2026, 13:45:21] Abyann Manikandan: alright but it hallucinates a lot, so you have to see to it that it fixes these issues
+[23/10/2026, 13:45:27] Abyann Manikandan: and more issues will probably arise ‎<This message was edited>
+[23/10/2026, 13:45:40] Abyann Manikandan: as a result of the new fixes
+[23/10/2026, 13:45:51] Abyann Manikandan: that's the issue of vibe coding
+[23/10/2026, 13:47:29] Siddhant Kapoor: rly i had no idea
+[23/10/2026, 13:47:52] Abyann Manikandan: right but u can’t js say it’ll do all the work yk
+[23/10/2026, 13:48:04] Abyann Manikandan: that’s what u said here lol
